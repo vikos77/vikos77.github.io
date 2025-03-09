@@ -3,67 +3,363 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bioinformatics Portfolio - vikos77</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Vigneshwaran Muthuraman | Bioinformatician & Microbiologist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3a5a78;
+            --secondary: #5b8fb9;
+            --accent: #03C988;
+            --dark: #1a1a2e;
+            --light: #f5f5f5;
+            --code-bg: #2b2b2b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--light);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+        }
+        
+        .title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin-bottom: 1rem;
+        }
+        
+        .section {
+            margin: 3rem 0;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .skill-category h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .skill-list {
+            list-style-type: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-list li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .tech-tag {
+            background: var(--secondary);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: var(--secondary);
+        }
+        
+        .highlight {
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .publications {
+            list-style-type: none;
+        }
+        
+        .publications li {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .publications li:last-child {
+            border-bottom: none;
+        }
+        
+        .pub-title {
+            font-weight: bold;
+        }
+        
+        .pub-authors {
+            font-style: italic;
+        }
+        
+        .pub-journal {
+            color: var(--secondary);
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .skill-category {
+                min-width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Bioinformatics Portfolio</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-        </nav>
+        <img src="https://github.com/vikos77.png" alt="Vigneshwaran Muthuraman" class="profile-img">
+        <h1>Vigneshwaran Muthuraman</h1>
+        <p class="title">Bioinformatician & Microbiologist</p>
+        <div class="social-links">
+            <a href="https://github.com/vikos77"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/vigneshwaran-muthuraman-24491746/"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:muthuramanvigneshwaran@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
     </header>
-
-    <main>
-        <section id="about">
+    
+    <div class="container">
+        <section class="section">
             <h2>About Me</h2>
-            <p>Welcome to my bioinformatics portfolio! I'm passionate about combining computational methods with biological research. My focus areas include:</p>
-            <ul>
-                <li>Genomic data analysis</li>
-                <li>Sequence alignment and analysis</li>
-                <li>Next-generation sequencing data processing</li>
-                <li>Biological data visualization</li>
-            </ul>
-            <p>Currently building expertise in various bioinformatics tools and techniques while working on practical projects.</p>
+            <p>
+                I'm a <span class="highlight">Microbiologist turned Bioinformatician</span> with over 3 years of specialized experience bridging wet-lab expertise and computational analysis. My research focuses on antimicrobial resistance, molecular diagnostics, and bacterial pathogenesis using both traditional microbiology techniques and cutting-edge bioinformatics approaches.
+            </p>
+            <p>
+                Currently pursuing a Master's in Bioinformatics at Teesside University, I'm enhancing my computational toolkit to analyze complex biological data and contribute to infectious disease research.
+            </p>
         </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>Sequence Analysis Tool</h3>
-                    <p>Coming soon - A Python-based tool for DNA/RNA sequence analysis</p>
-                    <div class="tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Biopython</span>
+        
+        <section class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Bioinformatics & Programming</h3>
+                    <ul class="skill-list">
+                        <li>R Programming for Biostatistics</li>
+                        <li>Python for Data Analysis</li>
+                        <li>NGS Data Analysis Pipelines</li>
+                        <li>Differential Expression Analysis</li>
+                        <li>Pathway & KEGG Enrichment</li>
+                        <li>SQL for Biological Databases</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Laboratory Expertise</h3>
+                    <ul class="skill-list">
+                        <li>Bacterial Cultivation & AST</li>
+                        <li>Molecular Biology (PCR, qPCR)</li>
+                        <li>Mammalian Cell Culture</li>
+                        <li>Biofilm Analysis</li>
+                        <li>High-throughput Diagnostics</li>
+                        <li>Quality Control & Validation</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <ul class="skill-list">
+                        <li>DESeq2, EdgeR, clusterProfiler</li>
+                        <li>FastQC, Trimmomatic, GATK</li>
+                        <li>ggplot2, EnhancedVolcano</li>
+                        <li>Docker & Workflow Automation</li>
+                        <li>Version Control (Git)</li>
+                        <li>LIMS & Electronic Lab Notebooks</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Featured Projects</h2>
+            
+            <div class="project-card">
+                <img src="https://raw.githubusercontent.com/vikos77/bioinformatics-portfolio/main/projects/rna-seq-analysis/figures/volcano_plot_enhanced.png" alt="RNA-seq Analysis" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">RNA-seq Analysis of RmpA Regulation</h3>
+                    <p>Comprehensive analysis of transcriptional changes induced by RmpA overexpression in E. coli, revealing impacts on ribosomal biogenesis and nucleotide sugar metabolism pathways.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">R</span>
+                        <span class="tech-tag">DESeq2</span>
+                        <span class="tech-tag">clusterProfiler</span>
+                        <span class="tech-tag">KEGG Analysis</span>
                     </div>
+                    <a href="https://github.com/vikos77/bioinformatics-portfolio/tree/main/projects/rna-seq-analysis" class="btn">View Project</a>
+                </div>
+            </div>
+            
+            <!-- More project cards will be added as you complete them -->
+            
+        </section>
+        
+        <section class="section">
+            <h2>Publications</h2>
+            <ul class="publications">
+                <li>
+                    <p class="pub-title">Comparative study of Clinical features and Vaccination status in Omicron and non-Omicron infected patients during 3rd wave in Mumbai, India</p>
+                    <p class="pub-authors">Takke A, Zarekar M, <strong>Muthuraman V</strong>, Ashar A, Patil K, et al (2022)</p>
+                    <p class="pub-journal">Journal of Family Medicine and Primary Care, 11(10), 6135-6142</p>
+                </li>
+                <li>
+                    <p class="pub-title">Effect of Psidium guajava (guava) L. Leaf Decoction on Antibiotic-resistant Clinical Diarrhoeagenic Isolates of Shigella spp.</p>
+                    <p class="pub-authors">Daswani P, <strong>Muthuraman V</strong>, Macaden R, Dias M & Birdi, T. (2020)</p>
+                    <p class="pub-journal">International Journal of Enteric Pathogens, 8(4), 122-129</p>
+                </li>
+                <li>
+                    <p class="pub-title">Microbial community distribution and core microbiome in successive wound grades of individuals with diabetic foot ulcers</p>
+                    <p class="pub-authors">Jnana A, <strong>Muthuraman V</strong>, Varghese VK, Chakrabarty S, Murali TS, et al (2020)</p>
+                    <p class="pub-journal">Applied and Environmental Microbiology, 86(6), e02608-19</p>
+                </li>
+            </ul>
+        </section>
+        
+        <section class="section">
+            <h2>Education & Certifications</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Academic Education</h3>
+                    <ul class="skill-list">
+                        <li>Master of Bioinformatics, Teesside University (2025)</li>
+                        <li>Focus: Proteomic Technologies, R Programming, Python</li>
+                        <li>Projects: NGS Data Analysis, Protein Structure Prediction, Pathway Analysis</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Professional Certifications</h3>
+                    <ul class="skill-list">
+                        <li>Associate Data Analyst - DataCamp (August 2024)</li>
+                        <li>Data Analyst with R - DataCamp (July 2024)</li>
+                        <li>36-hour intensive program in advanced R programming</li>
+                    </ul>
                 </div>
             </div>
         </section>
-
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming</h3>
-                    <ul>
-                        <li>Python Programming</li>
-                        <li>R Analysis</li>
-                        <li>Git Version Control</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Bioinformatics</h3>
-                    <ul>
-                        <li>Sequence Analysis</li>
-                        <li>NGS Data Processing</li>
-                        <li>Genomic Data Analysis</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </main>
+    </div>
+    
+    <footer>
+        <p>© 2025 Vigneshwaran Muthuraman | Bioinformatician & Microbiologist</p>
+        <p>Currently seeking opportunities in bioinformatics, microbial genomics, and infectious disease research</p>
+    </footer>
 </body>
 </html>
